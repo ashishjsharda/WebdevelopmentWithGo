@@ -12,4 +12,8 @@ func greet(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 
+	http.HandleFunc("/", greet)
+	fmt.Println("Server started at port 8080")
+	http.ListenAndServe(":8080", nil)
+
 }
